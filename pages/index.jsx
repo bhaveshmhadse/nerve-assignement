@@ -66,7 +66,7 @@ const Views = ({ views, handleViewChange, selectedView }) => {
   return (
     <div className="w-full h-auto items-center justify-between flex lg:px-2 bg-gray-100 rounded-2xl mb-5">
       {views.map((view) => (
-        <button key={view} onClick={() => handleViewChange(view)} className={`w-1/4 mx-1 lg:px-2 py-2 border-transparent font-black rounded-2xl border-2 delay-50 ${selectedView == view ? "text-white bg-indigo-500" : "hover:text-gray-500 hover:bg-indigo-100"}  text-gray-600`}>
+        <button key={view} onClick={() => handleViewChange(view)} className={`w-1/4 lg:mx-1 lg:px-2 py-2 border-transparent font-black lg:rounded-2xl rounded-xl border-2 delay-50 ${selectedView == view ? "text-white bg-indigo-500" : "hover:text-gray-500 hover:bg-indigo-100"}  text-gray-600`}>
           {view}
         </button>
       ))}
