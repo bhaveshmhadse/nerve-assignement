@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { formatDate } from "@/utils/util";
 import { data } from "../public/data.json";
 
-const Home = ({}) => {
+const Card = () => {
   let [views, setViews] = useState([]);
   let [selectedDate, setSelectedDate] = useState();
   let [cacheStrategy, setCacheStrategy] = useState({});
@@ -49,9 +49,9 @@ const Home = ({}) => {
 
   return (
     <div className="w-full h-screen flex items-center justify-center text-gray-800  text-xs lg:text-lg">
-      <div className="lg:w-3/4 w-11/12 border-2 lg:border-gray-300 border-gray-100 rounded-2xl h-auto flex items-center justify-center p-2">
+      <div className="lg:w-3/4 w-11/12 border-2 lg:border-gray-300 border-gray-100 rounded-2xl h-auto flex items-center justify-center lg:p-2">
         <div className="w-full h-auto">
-          <div className="w-full h-auto items-center justify-center block px-2">
+          <div className="w-full h-auto items-center justify-center block lg:px-2 px-1">
             <Views views={views} selectedView={selectedView} handleViewChange={handleViewChange} />
             <DateSelector dateArray={dateArray} selectedDate={selectedDate} handleDateChange={handleDateChange} showDateSelectionContainer={showDateSelectionContainer} toggleDateSelectionContainer={toggleDateSelectionContainer} />
             <StrategyList selectedDate={selectedDate} selectedView={selectedView} cacheStrategy={cacheStrategy} showDateSelectionContainer={showDateSelectionContainer} />
@@ -66,7 +66,7 @@ const Views = ({ views, handleViewChange, selectedView }) => {
   return (
     <div className="w-full h-auto items-center justify-between flex lg:px-2 bg-gray-100 rounded-2xl mb-5">
       {views.map((view) => (
-        <button key={view} onClick={() => handleViewChange(view)} className={`w-1/4 mx-1 px-2 py-2 border-transparent font-black rounded-2xl border-2 delay-50 ${selectedView == view ? "text-white bg-indigo-500" : "hover:text-gray-500 hover:bg-indigo-100"}  text-gray-600`}>
+        <button key={view} onClick={() => handleViewChange(view)} className={`w-1/4 mx-1 lg:px-2 py-2 border-transparent font-black rounded-2xl border-2 delay-50 ${selectedView == view ? "text-white bg-indigo-500" : "hover:text-gray-500 hover:bg-indigo-100"}  text-gray-600`}>
           {view}
         </button>
       ))}
@@ -126,4 +126,4 @@ const StrategyList = ({ selectedDate, selectedView, cacheStrategy, showDateSelec
   }
 };
 
-export default Home;
+export default Card;
