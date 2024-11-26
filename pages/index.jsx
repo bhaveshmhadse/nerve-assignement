@@ -49,7 +49,7 @@ const Home = ({}) => {
 
   return (
     <div className="w-full h-screen flex items-center justify-center text-gray-800  text-xs lg:text-lg">
-      <div className="lg:w-3/4 w-11/12 border-2 border-gray-300 rounded-2xl h-auto flex items-center justify-center p-2">
+      <div className="lg:w-3/4 w-11/12 border-2 lg:border-gray-300 border-gray-100 rounded-2xl h-auto flex items-center justify-center p-2">
         <div className="w-full h-auto">
           <div className="w-full h-auto items-center justify-center block px-2">
             <Views views={views} selectedView={selectedView} handleViewChange={handleViewChange} />
@@ -64,7 +64,7 @@ const Home = ({}) => {
 
 const Views = ({ views, handleViewChange, selectedView }) => {
   return (
-    <div className="w-full h-auto items-center justify-between flex px-2 bg-gray-100 rounded-2xl mb-5">
+    <div className="w-full h-auto items-center justify-between flex lg:px-2 bg-gray-100 rounded-2xl mb-5">
       {views.map((view) => (
         <button key={view} onClick={() => handleViewChange(view)} className={`w-1/4 mx-1 px-2 py-2 border-transparent font-black rounded-2xl border-2 delay-50 ${selectedView == view ? "text-white bg-indigo-500" : "hover:text-gray-500 hover:bg-indigo-100"}  text-gray-600`}>
           {view}
@@ -77,7 +77,7 @@ const Views = ({ views, handleViewChange, selectedView }) => {
 const DateSelector = ({ dateArray, selectedDate, handleDateChange, showDateSelectionContainer, toggleDateSelectionContainer }) => {
   return (
     <>
-      <div className="w-full flex px-2 py-3 font-black bg-white rounded-2xl border-2 border-gray-300 select-none">
+      <div className="w-full flex px-2 py-3 font-black bg-white rounded-2xl border-2 lg:border-gray-300 border-gray-100 select-none">
         <div onClick={toggleDateSelectionContainer} className="w-full">
           {formatDate(selectedDate)}
         </div>
@@ -86,7 +86,7 @@ const DateSelector = ({ dateArray, selectedDate, handleDateChange, showDateSelec
       {showDateSelectionContainer && (
         <div className="px-4 mt-2 ">
           {dateArray.map((date) => (
-            <div onClick={() => handleDateChange(date)} className="w-full px-2 py-3 my-1 font-black bg-white rounded-2xl border-2 border-gray-300 select-none">
+            <div onClick={() => handleDateChange(date)} className="w-full px-2 py-3 my-1 font-black bg-white rounded-2xl border-2 lg:border-gray-300 border-gray-100 select-none">
               {formatDate(date)}
             </div>
           ))}
@@ -102,7 +102,7 @@ const StrategyList = ({ selectedDate, selectedView, cacheStrategy, showDateSelec
     return (
       <div className="py-5">
         {Object.entries(cacheStrategy[selectedDate][selectedView]).map((eachStrategy) => (
-          <div className="w-full items-center justify-center text-start px-2 flex py-3 my-1 font-black bg-white rounded-2xl border-2 border-gray-300">
+          <div className="w-full items-center justify-center text-start px-2 flex py-3 my-1 font-black bg-white rounded-2xl border-2 lg:border-gray-300 border-gray-100">
             <div className="lg:w-full w-1/2">{eachStrategy[0]}</div>
             <div className="lg:w-1/6 w-1/2 text-gray-500 flex justify-end items-center text-center">
               <span>•&nbsp;</span>
@@ -119,7 +119,7 @@ const StrategyList = ({ selectedDate, selectedView, cacheStrategy, showDateSelec
   if (!showDateSelectionContainer) {
     return (
       <div className="w-full py-5 font-black text-center">
-        <div className="text-gray-600">There are no strategies for</div>
+        <div className="text-gray-400">There are no strategies for</div>
         <div>{formatDate(selectedDate)}</div>
       </div>
     );
