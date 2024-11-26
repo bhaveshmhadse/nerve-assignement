@@ -102,10 +102,10 @@ const StrategyList = ({ selectedDate, selectedView, cacheStrategy, showDateSelec
     return (
       <div className="py-5">
         {Object.entries(cacheStrategy[selectedDate][selectedView]).map((eachStrategy) => (
-          <div className="w-full px-2 flex py-3 my-1 font-black bg-white rounded-2xl border-2 border-gray-300">
-            <div className="w-full">{eachStrategy[0]}</div>
-            <div className="w-1/6 text-gray-500 flex justify-end items-center text-center">
-              <span>*&nbsp;</span>
+          <div className="w-full items-center justify-center text-start px-2 flex py-3 my-1 font-black bg-white rounded-2xl border-2 border-gray-300">
+            <div className="lg:w-full w-1/2">{eachStrategy[0]}</div>
+            <div className="lg:w-1/6 w-1/2 text-gray-500 flex justify-end items-center text-center">
+              <span>•&nbsp;</span>
               <span>{eachStrategy[1]} Strateg</span>
               {parseInt(eachStrategy[1]) > 1 ? "ies" : "y"}
             </div>
