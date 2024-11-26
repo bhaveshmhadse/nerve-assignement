@@ -1,0 +1,1 @@
+selectedDate={selectedDate} selectedView={selectedView} cacheStrategy={cacheStrategy}
